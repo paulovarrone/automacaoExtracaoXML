@@ -45,7 +45,7 @@ def extrair_info_partes(polo):
         pessoa = parte.pessoa
         nome = pessoa.nome
         documento_principal = pessoa.numeroDocumentoPrincipal
-        advogados = [advogado.nome for advogado in parte.advogado]
+        advogados = list(map(lambda advogado: advogado.nome, parte.advogado))
         partes_info.append({
             'nome': nome,
             'documento_principal': documento_principal,
